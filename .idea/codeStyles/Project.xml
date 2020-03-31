@@ -1,0 +1,20 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <ScalaCodeStyleSettings>
+      <option name="alwaysUsedImports">
+        <array>
+          <option value="org.scalatest.Assertions._" />
+        </array>
+      </option>
+      <option name="classCountToUseImportOnDemand" value="50" />
+      <option name="TYPE_ANNOTATION_PUBLIC_MEMBER" value="false" />
+      <option name="TYPE_ANNOTATION_PROTECTED_MEMBER" value="false" />
+      <option name="TYPE_ANNOTATION_UNIT_TYPE" value="false" />
+      <option name="TYPE_ANNOTATION_STRUCTURAL_TYPE" value="false" />
+      <option name="ENFORCE_FUNCTIONAL_SYNTAX_FOR_UNIT" value="false" />
+    </ScalaCodeStyleSettings>
+    <XML>
+      <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+    </XML>
+  </code_scheme>
+</component>
