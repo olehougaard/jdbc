@@ -51,7 +51,7 @@ public class BookDAOImpl implements BookDAO {
                 int authorId = resultSet.getInt("author_id");
                 String authorName = resultSet.getString("name");
                 Author author = new Author(authorId, authorName);
-                Book book = new Book(isbn, title, year, author);
+                Book book = createBook(resultSet);
                 return book;
             } else {
                 return null;
@@ -67,17 +67,21 @@ public class BookDAOImpl implements BookDAO {
             ResultSet resultSet = statement.executeQuery();
             ArrayList<Book> result = new ArrayList<>();
             while (resultSet.next()) {
-                String isbn = resultSet.getString("isbn");
-                String title = resultSet.getString("title");
-                int year = resultSet.getInt("yearOfPublishing");
-                int authorId = resultSet.getInt("author_id");
-                String authorName = resultSet.getString("name");
-                Author author = new Author(authorId, authorName);
-                Book book = new Book(isbn, title, year, author);
+                Book book = createBook(resultSet);
                 result.add(book);
             }
             return result;
         }
+    }
+
+    public static Book createBook(ResultSet resultSet) throws SQLException {
+        String isbn = resultSet.getString("isbn");
+        String title = resultSet.getString("title");
+        int year = resultSet.getInt("yearOfPublishing");
+        int authorId = resultSet.getInt("author_id");
+        String authorName = resultSet.getString("name");
+        Author author = new Author(authorId, authorName);
+        return new Book(isbn, title, year, author);
     }
 
     @Override
